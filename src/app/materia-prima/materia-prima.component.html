@@ -1,0 +1,54 @@
+<body>
+
+    <div style="text-align:center">
+        <h1>{{ title }}</h1>
+        <img width="100" alt="Logo Proyecto" src ="/assets/MondoTechno.ico">
+      </div>
+  <!------------------------------------------------------------------------------------------------------------------->
+    <!-- para mostrar el listado de contactos -->
+    <h1 class="titulos_centro">Materia prima</h1>
+    <div class="general">
+        
+        <h2>Lista de la materia prima: </h2>
+    
+        <form (ngSubmit)="consultaMateriaprimas(1)" [formGroup]="ListaMateriaprima" [formGroup]="ListaMateriaprima">
+    
+          <button type="submit" style="margin-right: 30px" >Mostrar Lista de materia prima</button>
+          <button (click)="LimpiarLista()" >Limpiar Lista de materia prima</button>
+    
+          <br><br>
+    
+          <h2>{{TituloMateriaprimas}}</h2>   
+          <table> 
+              <thead>
+                  <th>{{TablaMateriaprimas[0]}}</th>
+                  <th>{{TablaMateriaprimas[1]}}</th>
+                  <th>{{TablaMateriaprimas[2]}}</th>
+                  <th>{{TablaMateriaprimas[3]}}</th>
+                  <th>{{TablaMateriaprimas[4]}}</th>
+              </thead>
+    
+              <tbody>
+                  <tr  *ngFor="let cat of Materiaprimas">
+                      
+                    <th>{{ cat.ID_MATERIA_PRIMA}} </th>
+                    <th>{{ cat.NOM_MATERIA_PRIMA}} </th>
+                    <th>{{ cat.CANTIDAD}} </th>
+                    <th>{{ cat.TIPO_MP}}</th>
+                    <th>{{ cat.PRESENTACION_MP}}</th>
+                      
+                  </tr>
+              </tbody> 
+          </table>
+    
+        </form>
+    
+      </div>
+      <br><br><br><br>
+  
+      
+          <div>
+              <h3> <a routerLink = "/Inicio"> VOLVER A MENU INICIO </a> </h3>
+          </div>
+  </body>
+  
