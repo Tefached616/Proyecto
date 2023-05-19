@@ -15,7 +15,7 @@ const httpOptions =
 export class ServicioService 
 {
   
-  private Url: string = 'http://localhost:3000';
+  private Url: string = 'https://proyectoba-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 
@@ -40,7 +40,7 @@ export class ServicioService
   getCatalogos(): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Catalogo" , httpOptions);
+    return this.http.get(this.Url + "/api/catalogo" , httpOptions);
    
   }
 
@@ -48,7 +48,7 @@ export class ServicioService
   getListarCatalogoEsp(fil:any): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Catalogo" + fil , httpOptions);
+    return this.http.get(this.Url + "/api/catalogo" + fil , httpOptions);
    
   }
 
@@ -56,7 +56,7 @@ export class ServicioService
  // Método mostrar un solo Tipo de documento  
 
   getCatalogo(id:any): Observable<any> {
-  return this.http.get(this.Url + "/Catalogo"+id , httpOptions);
+  return this.http.get(this.Url + "/api/catalogo"+id , httpOptions);
 }
   //-------------------------------------------------------------
  // Método para insertar un nuevo Tipo de documento 
@@ -64,7 +64,7 @@ export class ServicioService
  async insertCatalogo(CatalogoD:any): Promise<any> {
   
   return new Promise((resolve, reject) => {
-    this.http.post(this.Url + "/Catalogo", CatalogoD, httpOptions).toPromise()
+    this.http.post(this.Url + "/api/catalogo", CatalogoD, httpOptions).toPromise()
   });
 }
 
@@ -74,7 +74,7 @@ export class ServicioService
  async updateCatalogo(cadena:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.put(this.Url + "/Catalogo", cadena, httpOptions).toPromise()
+    this.http.put(this.Url + "/api/catalogo", cadena, httpOptions).toPromise()
   });
 }
 //#endregion
@@ -84,21 +84,21 @@ export class ServicioService
   getContactos(): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Contacto" , httpOptions);
+    return this.http.get(this.Url + "/api/contacto" , httpOptions);
    
   }
 
   getListarContactoEsp(fil:any): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Contacto" + fil , httpOptions);
+    return this.http.get(this.Url + "/api/contacto" + fil , httpOptions);
    
   }
   //-------------------------------------------------------------
  // Método mostrar un solo contacto
 
   getContacto(id:any): Observable<any> {
-  return this.http.get(this.Url + "/Contacto"+id , httpOptions);
+  return this.http.get(this.Url + "/api/contacto"+id , httpOptions);
 }
   //-------------------------------------------------------------
  // Método para insertar un nuevo Contacto
@@ -106,7 +106,7 @@ export class ServicioService
  async insertContacto(ContactoD:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.post(this.Url + "/Contacto", ContactoD, httpOptions).toPromise()
+    this.http.post(this.Url + "/api/contacto", ContactoD, httpOptions).toPromise()
   });
 }
 
@@ -116,7 +116,7 @@ export class ServicioService
  async updateContacto(cadena:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.put(this.Url + "/Contacto", cadena, httpOptions).toPromise()
+    this.http.put(this.Url + "/api/contacto", cadena, httpOptions).toPromise()
   });
 }
 //#endregion
@@ -126,21 +126,21 @@ export class ServicioService
   getPersonals(): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Personal" , httpOptions);
+    return this.http.get(this.Url + "/api/personal" , httpOptions);
    
   }
 
   getListarPersonalEsp(fil:any): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Personal" + fil , httpOptions);
+    return this.http.get(this.Url + "/api/personal" + fil , httpOptions);
    
   }
   //-------------------------------------------------------------
  // Método mostrar un solo contacto
 
   getPersonal(id:any): Observable<any> {
-  return this.http.get(this.Url + "/Personal"+id , httpOptions);
+  return this.http.get(this.Url + "/api/personal"+id , httpOptions);
 }
   //-------------------------------------------------------------
  // Método para insertar un nuevo Contacto
@@ -148,7 +148,7 @@ export class ServicioService
  async insertPersonal(PersonalD:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.post(this.Url + "/Personal", PersonalD, httpOptions).toPromise()
+    this.http.post(this.Url + "/api/personal", PersonalD, httpOptions).toPromise()
   });
 }
 
@@ -158,7 +158,7 @@ export class ServicioService
  async updatePersonal(cadena:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.put(this.Url + "/Personal", cadena, httpOptions).toPromise()
+    this.http.put(this.Url + "/api/personal", cadena, httpOptions).toPromise()
   });
 }
 //#endregion
@@ -167,20 +167,20 @@ export class ServicioService
   // Método Listar la Materia Prima
   getMateria_Primas(): Observable<any>
   {
-    return this.http.get(this.Url + "/Materia_Prima" , httpOptions);
+    return this.http.get(this.Url + "/api/materia-prima" , httpOptions);
   }
 
   getListarMateriaprimaEsp(fil:any): Observable<any>
   {
 
-    return this.http.get(this.Url + "/Materia_Prima" + fil , httpOptions);
+    return this.http.get(this.Url + "/api/materia-prima" + fil , httpOptions);
    
   }
   //-------------------------------------------------------------
  // Método mostrar un solo Materia Prima
 
   getMateriaprima(id:any): Observable<any> {
-  return this.http.get(this.Url + "/Materia_Prima"+id , httpOptions);
+  return this.http.get(this.Url + "/api/materia-prima"+id , httpOptions);
 }
   //-------------------------------------------------------------
  // Método para insertar un nuevo Materia Prima
@@ -188,7 +188,7 @@ export class ServicioService
  async insertMateriaprima(MateriaPrimaD:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.post(this.Url + "/Materia_Prima", MateriaPrimaD, httpOptions).toPromise()
+    this.http.post(this.Url + "/api/materia-prima", MateriaPrimaD, httpOptions).toPromise()
   });
 }
 
@@ -198,7 +198,7 @@ export class ServicioService
  async updateMateriaprima(cadena:any): Promise<any> {
 
   return new Promise((resolve, reject) => {
-    this.http.put(this.Url + "/Materia_Prima", cadena, httpOptions).toPromise()
+    this.http.put(this.Url + "/api/materia-prima", cadena, httpOptions).toPromise()
   });
 }
 //#endregion
@@ -208,21 +208,21 @@ export class ServicioService
 getProduccions(): Observable<any>
 {
 
-  return this.http.get(this.Url + "/Produccion" , httpOptions);
+  return this.http.get(this.Url + "/api/produccion" , httpOptions);
  
 }
 
 getListarProduccionEsp(fil:any): Observable<any>
 {
 
-  return this.http.get(this.Url + "/Produccion" + fil , httpOptions);
+  return this.http.get(this.Url + "/api/produccion" + fil , httpOptions);
  
 }
 //-------------------------------------------------------------
 // Método mostrar un solo contacto
 
 getProduccion(id:any): Observable<any> {
-return this.http.get(this.Url + "/Produccion"+id , httpOptions);
+return this.http.get(this.Url + "/api/produccion"+id , httpOptions);
 }
 //-------------------------------------------------------------
 // Método para insertar un nuevo Contacto
@@ -230,7 +230,7 @@ return this.http.get(this.Url + "/Produccion"+id , httpOptions);
 async insertProduccion(PersonalD:any): Promise<any> {
 
 return new Promise((resolve, reject) => {
-  this.http.post(this.Url + "/Produccion", PersonalD, httpOptions).toPromise()
+  this.http.post(this.Url + "/api/produccion", PersonalD, httpOptions).toPromise()
 });
 }
 
@@ -240,7 +240,7 @@ return new Promise((resolve, reject) => {
 async updateProduccion(cadena:any): Promise<any> {
 
 return new Promise((resolve, reject) => {
-  this.http.put(this.Url + "/Produccion", cadena, httpOptions).toPromise()
+  this.http.put(this.Url + "/api/produccion", cadena, httpOptions).toPromise()
 });
 }
 //#endregion
@@ -249,21 +249,21 @@ return new Promise((resolve, reject) => {
 getProductos(): Observable<any>
 {
 
-  return this.http.get(this.Url + "/Producto" , httpOptions);
+  return this.http.get(this.Url + "/api/producto" , httpOptions);
  
 }
 
 getListarProductoEsp(fil:any): Observable<any>
 {
 
-  return this.http.get(this.Url + "/Producto" + fil , httpOptions);
+  return this.http.get(this.Url + "/api/producto" + fil , httpOptions);
  
 }
 //-------------------------------------------------------------
 // Método mostrar un solo Materia Prima
 
 getProducto(id:any): Observable<any> {
-return this.http.get(this.Url + "/Producto"+id , httpOptions);
+return this.http.get(this.Url + "/api/producto"+id , httpOptions);
 }
 //-------------------------------------------------------------
 // Método para insertar un nuevo Materia Prima
@@ -271,7 +271,7 @@ return this.http.get(this.Url + "/Producto"+id , httpOptions);
 async insertProducto(ProductoD:any): Promise<any> {
 
 return new Promise((resolve, reject) => {
-  this.http.post(this.Url + "/Producto", ProductoD, httpOptions).toPromise()
+  this.http.post(this.Url + "/api/producto", ProductoD, httpOptions).toPromise()
 });
 }
 
@@ -281,7 +281,7 @@ return new Promise((resolve, reject) => {
 async updateProducto(cadena:any): Promise<any> {
 
 return new Promise((resolve, reject) => {
-  this.http.put(this.Url + "/Producto", cadena, httpOptions).toPromise()
+  this.http.put(this.Url + "/api/producto", cadena, httpOptions).toPromise()
 });
 }
 //#endregion
@@ -290,21 +290,21 @@ return new Promise((resolve, reject) => {
 getTpasos(): Observable<any>
 {
 
-  return this.http.get(this.Url + "/Productoxmateriaprima" , httpOptions);
+  return this.http.get(this.Url + "/api/producto-materia-prima" , httpOptions);
  
 }
 
 getListarTpasoEsp(fil:any): Observable<any>
 {
 
-  return this.http.get(this.Url + "/Productoxmateriaprima" + fil , httpOptions);
+  return this.http.get(this.Url + "/api/producto-materia-prima" + fil , httpOptions);
  
 }
 //-------------------------------------------------------------
 // Método mostrar un solo Materia Prima
 
 getTpaso(id:any): Observable<any> {
-return this.http.get(this.Url + "/Productoxmateriaprima"+id , httpOptions);
+return this.http.get(this.Url + "/api/producto-materia-prima"+id , httpOptions);
 }
 //-------------------------------------------------------------
 // Método para insertar un nuevo Materia Prima
@@ -312,7 +312,7 @@ return this.http.get(this.Url + "/Productoxmateriaprima"+id , httpOptions);
 async insertTpaso(ProductoD:any): Promise<any> {
 
 return new Promise((resolve, reject) => {
-  this.http.post(this.Url + "/Productoxmateriaprima", ProductoD, httpOptions).toPromise()
+  this.http.post(this.Url + "/api/producto-materia-prima", ProductoD, httpOptions).toPromise()
 });
 }
 
@@ -322,7 +322,7 @@ return new Promise((resolve, reject) => {
 async updateTpaso(cadena:any): Promise<any> {
 
 return new Promise((resolve, reject) => {
-  this.http.put(this.Url + "/Productoxmateriaprima", cadena, httpOptions).toPromise()
+  this.http.put(this.Url + "/api/producto-materia-prima", cadena, httpOptions).toPromise()
 });
 }
 //#endregion
